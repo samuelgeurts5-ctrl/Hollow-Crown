@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hollow Crown — Character Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <main id="profile-screen" class="screen">
+    <section class="panel">
+      <p class="eyebrow">HOLLOW CROWN · CHARACTER LAB</p>
+      <h1>Create your adventurer</h1>
+      <p class="muted">Choose a name and a character to enter the animation test world.</p>
+      <label for="screen-name">Screen name</label>
+      <input id="screen-name" maxlength="18" value="Adventurer" autocomplete="off">
+      <label>Choose your character</label>
+      <div id="character-options" class="character-grid"></div>
+      <p id="profile-error" class="error" role="alert"></p>
+      <button id="enter-world" class="primary">Enter the test world</button>
+    </section>
+  </main>
+  <main id="game-screen" class="hidden">
+    <div id="game-canvas"></div>
+    <div class="hud">
+      <div class="hud-title"><strong>HOLLOW CROWN</strong><span id="hud-character">Warrior</span></div>
+      <div class="controls"><b>WASD</b> Move <b>Mouse</b> Camera <b>Left click</b> Attack <b>1 / 2</b> Wizard spells <b>Esc</b> Profile</div>
+      <div id="status" aria-live="polite">Loading character…</div>
+    </div>
+    <div class="crosshair">+</div>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
